@@ -3,7 +3,7 @@
 --Drop children tables first so this file can be re-run safely.
 
 DROP TABLE IF EXISTS candidate_skills;
-DROP TABLE IF EXISTS candidates_traits;
+DROP TABLE IF EXISTS candidate_traits;
 DROP TABLE IF EXISTS job_skills;
 DROP TABLE IF EXISTS job_culture;
 DROP TABLE IF EXISTS candidates;
@@ -36,7 +36,7 @@ CREATE TABLE candidate_skills(
     PRIMARY KEY(candidate_id,skill)
 );
 
-CREATE TABLE candidates_traits(
+CREATE TABLE candidate_traits(
     candidate_id INTEGER NOT NULL REFERENCES candidates(id) ON DELETE CASCADE,
     trait TEXT NOT NULL,
     PRIMARY KEY(candidate_id,trait)
