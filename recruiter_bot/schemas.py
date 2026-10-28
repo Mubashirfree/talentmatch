@@ -18,7 +18,7 @@ def clean_tags(values:list[str])->list[str]:
         tag="-".join(v.strip().lower().split())
         if tag and tag not in cleaned:
             cleaned.append(tag)
-        return cleaned
+    return cleaned
 
 #input (what client sends)
 
@@ -117,7 +117,7 @@ class JobMatchesOut(BaseModel):
     matches:list[CandidateMatch]
 
 class CandidateMatchesOut(BaseModel):
-    candidate:CandidateIn
+    candidate:CandidateRef
     matches:list[JobMatch]
 
 
