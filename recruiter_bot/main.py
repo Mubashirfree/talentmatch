@@ -6,7 +6,7 @@ Interactive docs: http://127.0.0.1:8000/docs
 import sqlite3
 
 from fastapi import Depends,FastAPI,HTTPException,Query
-
+from fastapi.responses import RedirectResponse
 from recruiter_bot.db import get_connection
 from recruiter_bot.matching import rank_candidates_for_job,rank_jobs_for_candidate
 from recruiter_bot.repository import insert_candidate,insert_job
@@ -28,6 +28,11 @@ def get_db():
         conn.close()
 
 #reading
+
+@app.get("/", include_in_schema=False)
+def root():
+    """Send visitors of the bare URL to the interactive docs page."""
+    return RedirectResponse(url="/docs")
 
 @app.get("/candidates",response_model=list[CandidateSummary])
 def list_candidates(conn=Depends(get_db)):
