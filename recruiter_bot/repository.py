@@ -27,7 +27,7 @@ def insert_candidate(conn,name,experience_years,availability,skills,traits,quirk
 def insert_job(conn,title,min_experience,skills,culture,tagline=None):
     """Insert one job plus its required skills and culture keywords.Returns the new id."""
     cur=conn.execute(
-        "INSERT INTO jobs(title,min_experience,tagline) VALUES(?,?,?)," \
+        "INSERT INTO jobs(title,min_experience,tagline) VALUES(?,?,?)", 
         (title,min_experience,tagline),
     )
     jid=cur.lastrowid
