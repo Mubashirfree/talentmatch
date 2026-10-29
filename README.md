@@ -22,14 +22,31 @@ A request hits a route in `main.py`. Pydantic checks any input. `matching.py` as
 
 Requires Python 3.10 or newer.
 
+**Linux / macOS / WSL:**
+
 ```bash
-git clone git@github.com:Mubashirfree/talentmatch.git
+git clone https://github.com/Mubashirfree/talentmatch.git
 cd talentmatch
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 python -m recruiter_bot.seed                 # creates recruiter_bot.db (15 candidates, 6 jobs)
 uvicorn recruiter_bot.main:app --reload      # http://127.0.0.1:8000
 ```
+
+**Windows (PowerShell):**
+
+```powershell
+git clone https://github.com/Mubashirfree/talentmatch.git
+cd talentmatch
+py -m venv .venv
+.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+python -m recruiter_bot.seed
+uvicorn recruiter_bot.main:app --reload
+```
+
+If activation is blocked, run `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` once.
+In PowerShell, use the `/docs` page (or `curl.exe` / `Invoke-RestMethod`) to try the API.
 
 Interactive API docs (try every endpoint in the browser): http://127.0.0.1:8000/docs
 
