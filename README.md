@@ -152,4 +152,8 @@ sqlite3 -header -column sql_detective/hiring.db < sql_detective/sql_detective.sq
 
 ## AI usage
 
-I used Claude (Anthropic) throughout this project. It helped me plan the architecture and build order, and I used it to generate the first version of the code based on the features I wanted and the structure of this README. I then typed the code into my editor file by file and ran it. I fixed the errors that came up and changed the logic wherever it didn't match. This included fixing SQL and Python typos, a merged route, and an incorrect status code by using tracebacks, code review, and the test suite. I tested every endpoint with curl. For Part 2, I wrote my own attempts for all five queries, ran them, and checked and corrected the results. The explanations in this README were drafted with Claude's help, and I verified them against the code. I can walk through any file and explain how it works.
+I used **Claude (Anthropic)** throughout this project. It helped me **plan the architecture and build order**, and I used it to **generate the first version of the code** based on the features I wanted and the structure of this README. I then **typed the code into my editor file by file** and ran it.
+
+I **fixed the errors** that came up and **changed the logic** wherever it didn't match. This included fixing SQL and Python typos, a merged route, and an incorrect status code, using **tracebacks, code review, and the test suite**. I also **tested every endpoint with curl**.
+
+For **Part 2**, I wrote **my own attempts for all five queries**, ran them, and checked and corrected the results. The explanations in this README were **drafted with Claude's help**, and I **verified them against the code**. I can **walk through any file** and explain how it works.
